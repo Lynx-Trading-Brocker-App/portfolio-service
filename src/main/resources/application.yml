@@ -2,13 +2,13 @@ spring:
   application:
     name: portfolio-service
   datasource:
-    url: jdbc:postgresql://localhost:5433/db_portfolio
-    username: postgres
-    password: yourpassword
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/db_portfolio}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     open-in-view: false
   flyway:
     enabled: true
@@ -17,4 +17,4 @@ server:
   port: 8083
 
 internal:
-  api-key: secret123
+  api-key: ${INTERNAL_API_KEY}
