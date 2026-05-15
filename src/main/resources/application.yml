@@ -14,7 +14,7 @@ spring:
     enabled: true
 
 server:
-  port: 8083
+  port: 9004
 
 internal:
   api-key: secret123
